@@ -1,6 +1,6 @@
 
+import Controllers.PersonaController;
 import Models.Persona;
-
 public class App {
         public static void main(String[] args) throws Exception {
                 Persona[] personas = {
@@ -43,7 +43,7 @@ public class App {
                 // 1 - Implementar un método para ordenar las personas por edad en orden
                 // desecendente tipo selección
 
-                // 1.2 - Buscar a la persona con las sigueintes edaddes en el arreglo de
+                // 1.2 - Buscar a la persona con las sigueintes edades en el arreglo de
                 // personas ya ordenarod por edad
                 // - 25
                 // - 70
@@ -61,5 +61,32 @@ public class App {
                 // Si encontró a la persona en el arreglo de personas los datos de dicha persona
                 // y su posición
                 // Si no encontró a la persona en el arreglo de personas
+
+                PersonaController controller = new PersonaController();
+
+                System.out.println("lista de personas");
+                for (Persona p : personas) {
+                        System.out.println(p);
+                }
+                controller.edadSeleccion(personas);
+                System.out.println();
+                System.out.println("lista de personas ordenadas por edad");
+                for (Persona p : personas) {
+                        System.out.println(p);
+                }
+                System.out.println("Buscar la edad de 25");
+                controller.busquedaEdad(personas, 25);
+                System.out.println("Buscar la edad de 70");
+                controller.busquedaEdad(personas, 70);
+                controller.nombreInsercion(personas);
+                System.out.println();
+                System.out.println("lista de personas ordenada por nombre");
+                for (Persona p : personas) {
+                        System.out.println(p);
+                }
+                System.out.println("Buscar el nombre de Anais");
+                controller.busquedaNombre(personas, "Anais");
+                System.out.println("Buscar el nombre de Miguel");
+                controller.busquedaNombre(personas, "Miguel");
         }
 }
